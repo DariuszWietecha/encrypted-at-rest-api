@@ -6,6 +6,6 @@ export class Data {
   @PrimaryColumn()
   id: string;
 
-  @Column()
+  @Column('longtext')
   value: string;
 }
