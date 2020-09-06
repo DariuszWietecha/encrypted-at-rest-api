@@ -1,5 +1,4 @@
 import { Injectable } from '@nestjs/common';
-import { DataDto } from './dto/data.dto';
 import { Data } from './data.entity';
 import { Repository } from 'typeorm'
 import { InjectRepository } from '@nestjs/typeorm';
@@ -18,11 +17,10 @@ export class DataService {
       .getMany();
   }
 
-  update(id: string, dataDto: DataDto): Promise<Data> {
+  update(id: string, value: string): Promise<Data> {
     const data = new Data();
     data.id = id;
-    data.value = JSON.stringify(dataDto.value);
-
+    data.value = value;
     return this.dataRepository.save(data);
   }
 }

@@ -3,10 +3,17 @@ import { DataController } from './data.controller';
 import { Data } from './data.entity';
 import { DataService } from './data.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { CryptoService } from '../crypto.service';
 
 @Module({
-  imports: [TypeOrmModule.forFeature([Data])],
+  imports: [
+    TypeOrmModule.forFeature([Data]),
+    
+  ],
   controllers: [DataController],
-  providers: [DataService]
+  providers: [
+    CryptoService,
+    DataService
+]
 })
 export class DataModule {}
