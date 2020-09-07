@@ -22,7 +22,7 @@ import { CryptoModule } from './crypto/crypto.module';
         return {
           ...passwordObject,
           "type": "mysql",
-          "host": "localhost",
+          "host": configService.get('DATABASE_HOST'),
           "port": 3306,
           "username": configService.get('DATABASE_USER'),
           "database": configService.get('DATABASE_NAME'),
