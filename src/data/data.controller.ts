@@ -1,5 +1,5 @@
 import { Body, Controller, Get, Param, Put } from '@nestjs/common';
-import { CryptoService } from '../crypto.service';
+import { CryptoService } from '../crypto/crypto.service';
 import { DataDto } from './dto/data.dto';
 import { Data } from './data.entity';
 import { DataService } from './data.service';
@@ -14,19 +14,18 @@ export class DataController {
   ) { }
 
   @Get(':id/:decryption_key')
-  async getById(@Param('id') id: string, @Param('decryption_key') decryption_key: string): Promise<Data[]> {
+  async getById(@Param('id') id: string, @Param('decryption_key') decryptionKey: string): Promise<Data[]> {
     const data = await this.dataService.getById(id);
 
     const decryptedData = [];
     data.forEach((item) => {
       let value;
       try {
-        value = this.cryptoService.decrypt(item.value, decryption_key);
+        value = this.cryptoService.decrypt(item.value, decryptionKey);
       } catch (error) {
-        this.logsService.create("Decryption Error", `decryption_key: ${decryption_key}`);
+        this.logsService.create('Decryption Error', `decryption_key: ${decryptionKey}`);
         return;
       }
-      // TODO: linter
       decryptedData.push({
         id: item.id,
         value,
