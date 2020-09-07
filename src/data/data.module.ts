@@ -8,11 +8,11 @@ import { Log } from '../logs/log.entity';
 import { LogsService } from '../logs/logs.service';
 
 @Module({
+  controllers: [DataController],
   imports: [
     TypeOrmModule.forFeature([Data]),
     TypeOrmModule.forFeature([Log]),
   ],
-  controllers: [DataController],
   providers: [
     CryptoService,
     DataService,

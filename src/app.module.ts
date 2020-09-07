@@ -9,11 +9,19 @@ import { CryptoModule } from './crypto/crypto.module';
   imports: [
     DataModule,
     LogsModule,
-    TypeOrmModule.forRoot(),
+    TypeOrmModule.forRoot({
+      "type": "mysql",
+      "host": "localhost",
+      "port": 3306,
+      "username": "root",
+      "database": "nestjs-aes-crypto",
+      "autoLoadEntities": true,
+      "synchronize": true
+    }),
     CryptoModule,
   ],
   providers: [
     CryptoService,
-]
+  ]
 })
-export class AppModule {}
+export class AppModule { }

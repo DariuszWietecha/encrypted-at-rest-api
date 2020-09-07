@@ -20,12 +20,14 @@ describe('DataService', () => {
     }).compile();
 
     dataServiceMock = module.get<DataService>(DataService);
-});
+  });
 
   it('getById', async () => {
     const result = await dataServiceMock.getById('testId');
-    expect(result[0].id).toEqual('testId');
-    expect(result[0].value).toEqual("U2FsdGVkX19EfAwVXVTfK6pn/6tZdvKIW6ZLfHKaitA=");
+    expect(result).toEqual([{
+      id: 'testId',
+      value: 'U2FsdGVkX19EfAwVXVTfK6pn/6tZdvKIW6ZLfHKaitA=',
+    }]);
   });
 
   it('update', async () => {

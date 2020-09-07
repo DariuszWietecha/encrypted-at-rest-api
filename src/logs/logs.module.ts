@@ -5,7 +5,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 
 @Module({
   imports: [
-    TypeOrmModule.forFeature([Log]),    
+    TypeOrmModule.forFeature([Log]),
   ],
   providers: [
     LogsService

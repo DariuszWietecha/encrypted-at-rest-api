@@ -39,9 +39,12 @@ describe('DataController', () => {
   describe('getById', () => {
     it('success', async () => {
       const result = await dataController.getById('testId', 'qwerqewr12341');
-      expect(result[0].id).toEqual('testId');
-      expect(result[0].value).toEqual({ "test": "test" });
+      expect(result).toEqual([{
+        id: 'testId',
+        value: { "test": "test" },
+      }]);
     });
+
     it('Decryption Error', async () => {
       const result = await dataController.getById('testId', 'qwerqewr1234');
       expect(result).toEqual([]);
