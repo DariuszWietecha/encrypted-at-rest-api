@@ -21,13 +21,16 @@ import { CryptoModule } from './crypto/crypto.module';
 
         return {
           ...passwordObject,
-          "type": "mysql",
+          "type": "postgres",
           "host": configService.get('DATABASE_HOST'),
-          "port": 3306,
+          "port": configService.get('DATABASE_PORT'),
           "username": configService.get('DATABASE_USER'),
           "database": configService.get('DATABASE_NAME'),
           "autoLoadEntities": true,
-          "synchronize": true
+          "synchronize": true,
+          "ssl": {
+            "rejectUnauthorized": false,
+          },
         }
       },
       inject: [ConfigService],

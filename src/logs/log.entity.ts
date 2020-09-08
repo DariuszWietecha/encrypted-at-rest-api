@@ -9,7 +9,7 @@ export class Log {
   @Column()
   type: string;
 
-  @Column('longtext')
+  @Column('text')
   error: string;
 
   @CreateDateColumn()
