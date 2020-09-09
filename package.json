@@ -1,10 +1,14 @@
 {
   "name": "encrypted-at-rest-api",
   "version": "0.0.1",
-  "description": "",
-  "author": "",
+  "description": "Simple REST API with two endpoints, to save and retrieve data encrypted at rest. Stored data is encrypted on update and decrypted on read with the key provided by the client.",
+  "author": "Dariusz Wietecha",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:DariuszWietecha/encrypted-at-rest-api.git"
+  },
   "private": true,
-  "license": "UNLICENSED",
+  "license": "ISC",
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "nest build",
