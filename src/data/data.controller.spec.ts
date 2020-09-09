@@ -55,7 +55,7 @@ describe('DataController', () => {
     const result = await dataController.update(
       'testId',
       {
-        "encryption_key": "qwerqewr12341",
+        "encryptionKey": "qwerqewr12341",
         "value": {
           "test": "test"
         }

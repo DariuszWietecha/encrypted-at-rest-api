@@ -16,7 +16,7 @@ describe('CryptoService', () => {
 
   it('encrypt', async () => {
     const encryptedData = await cryptoService.encrypt({
-      "encryption_key": "qwerqewr12341",
+      "encryptionKey": "qwerqewr12341",
       "value": {
         "test": "test"
       }

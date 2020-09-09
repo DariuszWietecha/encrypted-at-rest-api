@@ -88,7 +88,7 @@ describe('AppController (e2e)', () => {
         .expect([]);
 
       return getConnection().manager.find(Log).then((logs) => {
-        expect(logs[0].error).toEqual("decryption_key: qwerqewr1234");
+        expect(logs[0].error).toEqual("decryptionKey: qwerqewr1234");
         expect(logs[0].type).toEqual("Decryption Error");
       });
     });

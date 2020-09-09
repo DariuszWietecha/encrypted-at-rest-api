@@ -1,4 +1,9 @@
+import { ApiProperty } from '@nestjs/swagger';
+
 export class DataDto {
-  encryption_key: string;
+  @ApiProperty()
+  encryptionKey: string;
+
+  @ApiProperty()
   value: object;
 }

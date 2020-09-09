@@ -13,8 +13,8 @@ export class DataController {
     private readonly logsService: LogsService,
   ) { }
 
-  @Get(':id/:decryption_key')
-  async getById(@Param('id') id: string, @Param('decryption_key') decryptionKey: string): Promise<Data[]> {
+  @Get(':id/:decryptionKey')
+  async getById(@Param('id') id: string, @Param('decryptionKey') decryptionKey: string): Promise<Data[]> {
     const data = await this.dataService.getById(id);
 
     const decryptedData = [];
@@ -23,7 +23,7 @@ export class DataController {
       try {
         value = this.cryptoService.decrypt(item.value, decryptionKey);
       } catch (error) {
-        this.logsService.create('Decryption Error', `decryption_key: ${decryptionKey}`);
+        this.logsService.create('Decryption Error', `decryptionKey: ${decryptionKey}`);
         return;
       }
       decryptedData.push({

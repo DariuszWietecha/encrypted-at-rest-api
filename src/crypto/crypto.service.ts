@@ -6,7 +6,7 @@ const CryptoJS = require('crypto-js');
 @Injectable()
 export class CryptoService {
   encrypt(dataDto: DataDto): string {
-    return CryptoJS.AES.encrypt(JSON.stringify(dataDto.value), dataDto.encryption_key).toString();
+    return CryptoJS.AES.encrypt(JSON.stringify(dataDto.value), dataDto.encryptionKey).toString();
   }
 
   decrypt(value: string, decryptionKey: string): object {
