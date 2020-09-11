@@ -3,11 +3,10 @@
     "extends": [
         "tslint:recommended"
     ],
-    "jsRules": {
+    "rules": {
         "semicolon": [true, "always"],
         "max-line-length": [true, 110],
-        "quotemark": [true, "double"]
+        "quotemark": [true, "single"]
     },
-    "rules": {},
     "rulesDirectory": []
 }

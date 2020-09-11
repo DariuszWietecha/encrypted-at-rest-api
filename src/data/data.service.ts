@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { Data } from './data.entity';
-import { Repository } from 'typeorm'
+import { Repository } from 'typeorm';
 import { InjectRepository } from '@nestjs/typeorm';
 
 @Injectable()
@@ -11,16 +11,17 @@ export class DataService {
   ) { }
 
   getById(id: string): Promise<Data[]> {
+    const finalId = id.replace(/\*.*/, '%');
+
     return this.dataRepository
-      .createQueryBuilder("data")
-      .where(`id LIKE '${id.replace("*", "%")}'`)
+      .createQueryBuilder('data')
+      .where('id LIKE :id', { id: finalId })
+      .take(1000)
       .getMany();
   }
 
   update(id: string, value: string): Promise<Data> {
-    const data = new Data();
-    data.id = id;
-    data.value = value;
+    const data = new Data(id, value);
     return this.dataRepository.save(data);
   }
 }

@@ -2,9 +2,20 @@ import { AppModule } from './app.module';
 import { NestFactory } from '@nestjs/core';
 import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 import { ConfigService } from '@nestjs/config';
-// TODO: Describe endpoints or launch Swagger UI on demo and add link to readme
+import * as rateLimit from 'express-rate-limit';
+import * as helmet from 'helmet';
+
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
+
+  app.use('/data/',helmet());
+
+  app.use(
+    '/data/',
+    rateLimit({
+      max: 60,
+    }),
+  );
 
   const options = new DocumentBuilder()
     .setTitle('Encrypted at rest API')
@@ -12,10 +23,10 @@ async function bootstrap() {
     .setVersion('1.0')
     .build();
   const document = SwaggerModule.createDocument(app, options);
-  SwaggerModule.setup('', app, document);
+  SwaggerModule.setup('api', app, document);
 
   const configService = app.get(ConfigService);
-  const port = configService.get('PORT', 3000);
+  const port = configService.get('PORT', 8080);
   await app.listen(port);
 }
 bootstrap();

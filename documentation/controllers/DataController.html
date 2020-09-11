@@ -1,0 +1,458 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>encrypted-at-rest-api documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">encrypted-at-rest-api documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content controller">
+                   <div class="content-data">
+
+
+
+
+
+<ol class="breadcrumb">
+  <li>Controllers</li>
+  <li>DataController</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/data/data.controller.ts</code>
+        </p>
+
+            <p class="comment">
+                <h3>Prefix</h3>
+            </p>
+            <p class="comment">
+                <code>data</code>
+            </p>
+
+
+
+
+
+            <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#getById">getById</a>
+                            </li>
+                            <li>
+                                <a href="#update">update</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getById"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Async</span>
+                            getById
+                        </b>
+                        <a href="#getById"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getById(request: Request, id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, decryptionKey: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@ApiOperation({description: &#x27;Get data&#x27;})<br />@ApiParam({name: &#x27;id&#x27;, description: The exact id to query with or using the special wildcard ‘*’ query for a set of records (e.g. id&#x3D;“engineering-jobs-*”).&lt;br/&gt;
+      Id &#x3D; &#x27;*&#x27; is not valid.&lt;br/&gt;
+      For id with more than one wildcard, the part after the first wildcard won&#x27;t be considered (e.g. for  id &#x3D;“engineering-jobs-*-new*” query will use id&#x3D;&quot;engineering-jobs-*&quot;)})<br />@Get(&#x27;:id/:decryptionKey&#x27;)<br /></code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="29"
+                            class="link-to-prism">src/data/data.controller.ts:29</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>request</td>
+                                    <td>
+                                            <code>Request</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>id</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>decryptionKey</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../classes/Data.html" target="_self" >Promise&lt;Data[]&gt;</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="update"></a>
+                    <span class="name">
+                        <b>
+                            update
+                        </b>
+                        <a href="#update"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>update(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, encryptionKey: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, dataDto: <a href="../classes/DataDto.html">DataDto</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@ApiParam({name: &#x27;encryptionKey&#x27;, description: To make encryption safe encryptionKey require with minimum 9 characters, with at least one uppercase letter, one lowercase letter, one number and one symbol.&lt;br/&gt;
+    The recommended key length is 64 characters.})<br />@Put(&#x27;:id/:encryptionKey&#x27;)<br /></code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="67"
+                            class="link-to-prism">src/data/data.controller.ts:67</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>id</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>encryptionKey</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>dataDto</td>
+                                    <td>
+                                                <code><a href="../classes/DataDto.html" target="_self" >DataDto</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { CryptoService } from &#x27;../crypto/crypto.service&#x27;;
+import { DataDto } from &#x27;./dto/data.dto&#x27;;
+import { Data } from &#x27;./data.entity&#x27;;
+import { DataService } from &#x27;./data.service&#x27;;
+import { Request } from &#x27;express&#x27;;
+import { Body, Controller, Get, Param, Put, Req } from &#x27;@nestjs/common&#x27;;
+import { ApiTags, ApiOperation, ApiParam } from &#x27;@nestjs/swagger&#x27;;
+import { LogsService } from &#x27;../logs/logs.service&#x27;;
+
+@ApiTags(&#x27;data&#x27;)
+@Controller(&#x27;data&#x27;)
+export class DataController {
+  constructor(
+    private readonly cryptoService: CryptoService,
+    private readonly dataService: DataService,
+    private readonly logsService: LogsService,
+  ) { }
+
+  @ApiOperation({
+    description: &#x27;Get data&#x27;,
+  })
+  @ApiParam({
+    name: &#x27;id&#x27;,
+    description: &#x60;The exact id to query with or using the special wildcard ‘*’ query for a set of records (e.g. id&#x3D;“engineering-jobs-*”).&lt;br/&gt;
+      Id &#x3D; &#x27;*&#x27; is not valid.&lt;br/&gt;
+      For id with more than one wildcard, the part after the first wildcard won&#x27;t be considered (e.g. for  id &#x3D;“engineering-jobs-*-new*” query will use id&#x3D;&quot;engineering-jobs-*&quot;)&#x60;,
+  })
+  @Get(&#x27;:id/:decryptionKey&#x27;)
+  async getById(
+    @Req() request: Request,
+    @Param(&#x27;id&#x27;) id: string,
+    @Param(&#x27;decryptionKey&#x27;) decryptionKey: string): Promise&lt;Data[]&gt; {
+    const decryptedData &#x3D; [];
+
+    if (id &#x3D;&#x3D;&#x3D; &#x27;*&#x27;) {
+      return decryptedData;
+    }
+    const data &#x3D; await this.dataService.getById(id);
+
+    data.forEach((item) &#x3D;&gt; {
+      let value;
+      // TODO consider utilizing custom exception filter
+      try {
+        value &#x3D; this.cryptoService.decrypt(item.value, decryptionKey);
+      } catch (error) {
+        // TODO: add monitoring and alerts to recognize brute-force attack
+        this.logsService.create(
+          &#x27;Decryption Error&#x27;,
+          &#x60;id: ${id}, decryptionKey: ${decryptionKey}, request.Referrer: ${request.get(&#x27;Referrer&#x27;)}&#x60;);
+        return;
+      }
+      decryptedData.push({
+        id: item.id,
+        value,
+      });
+    });
+
+    return decryptedData;
+  }
+
+  @ApiParam({
+    name: &#x27;encryptionKey&#x27;,
+    description: &#x60;To make encryption safe encryptionKey require with minimum 9 characters, with at least one uppercase letter, one lowercase letter, one number and one symbol.&lt;br/&gt;
+    The recommended key length is 64 characters.&#x60;,
+  })
+  @Put(&#x27;:id/:encryptionKey&#x27;)
+  update(
+    @Param(&#x27;id&#x27;) id: string,
+    @Param(&#x27;encryptionKey&#x27;) encryptionKey: string,
+    @Body() dataDto: DataDto) {
+    return this.dataService.update(id, this.cryptoService.encrypt(encryptionKey, dataDto.value));
+  }
+}
+</code></pre>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'controller';
+            var COMPODOC_CURRENT_PAGE_URL = 'DataController.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

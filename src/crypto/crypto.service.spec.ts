@@ -15,22 +15,23 @@ describe('CryptoService', () => {
   });
 
   it('encrypt', async () => {
-    const encryptedData = await cryptoService.encrypt({
-      "encryptionKey": "qwerqewr12341",
-      "value": {
-        "test": "test"
+    const encryptedData = await cryptoService.encrypt('qwerqewr12341', {
+      'value': {
+        'test': 'test'
       }
     });
     const decryptedData = await cryptoService.decrypt('U2FsdGVkX19IY8DDU5+j0gfzSoACaWeMygm5GfdF82s=', 'qwerqewr12341');
     expect({
-      "test": "test"
+      'test': 'test'
     }).toEqual(decryptedData);
   });
 
   it('decrypt', async () => {
-    const result = await cryptoService.decrypt('U2FsdGVkX19IY8DDU5+j0gfzSoACaWeMygm5GfdF82s=', 'qwerqewr12341');
+    const result = await cryptoService.decrypt(
+      'U2FsdGVkX19IY8DDU5+j0gfzSoACaWeMygm5GfdF82s=',
+      'qwerqewr12341');
     expect(result).toEqual({
-      "test": "test"
+      'test': 'test'
     });
   });
 });

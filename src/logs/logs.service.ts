@@ -11,10 +11,7 @@ export class LogsService {
   ) { }
 
   create(type: string, error: string): Promise<InsertResult> {
-    // TODO: constructor for log
-    const log = new Log();
-    log.type = type;
-    log.error = error;
+    const log = new Log(type, error);
     return this.logRepository.insert(log);
   }
 }

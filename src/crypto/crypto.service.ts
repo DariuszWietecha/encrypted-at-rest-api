@@ -5,8 +5,11 @@ const CryptoJS = require('crypto-js');
 
 @Injectable()
 export class CryptoService {
-  encrypt(dataDto: DataDto): string {
-    return CryptoJS.AES.encrypt(JSON.stringify(dataDto.value), dataDto.encryptionKey).toString();
+  encrypt(encryptionKey: string, value: object): string {
+    // TODO: Serialization and encryption is a heavy computing task,
+    // threatening DOS-type attacks - a solution: limiting the size of
+    // the entrance object, transferring encryption to worker threads.
+    return CryptoJS.AES.encrypt(JSON.stringify(value), encryptionKey).toString();
   }
 
   decrypt(value: string, decryptionKey: string): object {

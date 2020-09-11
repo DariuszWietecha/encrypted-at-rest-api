@@ -3,6 +3,11 @@ import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn } from 'typeor
 
 @Entity()
 export class Log {
+  constructor(type: string, error: string,) {
+    this.type = type;
+    this.error = error;
+  }
+
   @PrimaryGeneratedColumn()
   id: number;
 
