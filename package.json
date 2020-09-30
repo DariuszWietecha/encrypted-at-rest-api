@@ -1,6 +1,6 @@
 {
   "name": "encrypted-at-rest-api",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Simple REST API with two endpoints, to save and retrieve data encrypted at rest. Stored data is encrypted on update and decrypted on read with the key provided by the client.",
   "author": "Dariusz Wietecha",
   "repository": {
@@ -59,8 +59,10 @@
     "eslint": "7.7.0",
     "eslint-config-prettier": "^6.10.0",
     "eslint-plugin-import": "^2.20.1",
+    "husky": "^4.3.0",
     "jest": "26.4.2",
     "prettier": "^1.19.1",
+    "pretty-quick": "^3.0.2",
     "supertest": "^4.0.2",
     "ts-jest": "26.2.0",
     "ts-loader": "^6.2.1",
@@ -81,5 +83,10 @@
     },
     "coverageDirectory": "../coverage",
     "testEnvironment": "node"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
   }
 }
