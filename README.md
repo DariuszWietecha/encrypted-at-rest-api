@@ -4,19 +4,15 @@
 
 Simple REST API with two endpoints, to save and retrieve data encrypted at rest. Stored data is encrypted on update and decrypted on read with the key provided by the client.
 
-The API was deployed as live-demo on [http://encrypted-at-rest-api-100.herokuapp.com/](http://encrypted-at-rest-api-100.herokuapp.com/)
-
 ## Compodoc documentation
 
 While the application is running, documentation is available on http://localhost:8080.
 
-[live-demo documentation](http://encrypted-at-rest-api-100.herokuapp.com/)
-
 ## Security
 
 Dependencies used to increase security:
-[Helmet](https://owasp.org/www-project-top-ten/)https://github.com/helmetjs/helmet)
-[Express Rate Limit](https://github.com/nfriedly/express-rate-limit)
+- [Helmet](https://github.com/helmetjs/helmet)
+- [Express Rate Limit](https://github.com/nfriedly/express-rate-limit)
 
 The limit of requests per each one minute for the IP is 60.
 The limit of data items in one request is 1000.
@@ -74,8 +70,6 @@ Unit tests coverage: 100%
 ## Swagger UI
 
 While the application is running, Swagger UI is available on http://localhost:8080.
-
-[live-demo Swagger UI](http://encrypted-at-rest-api-100.herokuapp.com/api)
 
 ## Notes
 
